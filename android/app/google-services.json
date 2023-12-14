@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "889886570267",
+    "project_id": "jeolad-instavoid",
+    "storage_bucket": "jeolad-instavoid.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:889886570267:android:9391b2e601ec40721b85be",
+        "android_client_info": {
+          "package_name": "com.example.instavoid"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBOKJKMKc5i0EMHuRn15NTLfTwrhusiEMQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
