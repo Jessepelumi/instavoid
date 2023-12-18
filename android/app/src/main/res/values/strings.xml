@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="facebook_app_id">715312160536994</string>
+    <string name="fb_login_protocol_scheme">fb715312160536994</string>
+    <string name="facebook_client_token">da7a46233b2254281ba171ba0a265ec5</string>
+    <string name="app_name">Jeolad ImageSharing</string>
+</resources>
