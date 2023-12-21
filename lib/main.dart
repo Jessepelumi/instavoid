@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:instavoid/state/auth/backend/authenticator.dart';
 import 'firebase_options.dart';
+
+import 'dart:developer' as devtools show log;
+
+extension Log on Object {
+  void log() => devtools.log(toString());
+}
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -42,6 +49,27 @@ class Home extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Home'),
+      ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          TextButton(
+            onPressed: () async {
+              final result = await Authenticator().loginWithGoogle();
+              //print(result);
+              result.log();
+            },
+            child: const Text("Sign in with Google"),
+          ),
+          TextButton(
+            onPressed: () async {
+              final result = await Authenticator().loginWithFacebook();
+              //print(result);
+              result.log();
+            },
+            child: const Text("Sign out with Facebook"),
+          ),
+        ],
       ),
     );
   }
