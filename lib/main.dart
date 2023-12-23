@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:instavoid/state/auth/backend/authenticator.dart';
+import 'package:instavoid/state/auth/models/auth_result.dart';
 import 'package:instavoid/state/auth/providers/auth_state_provider.dart';
-import 'package:instavoid/state/auth/providers/is_logged_in_provider.dart';
+//import 'package:instavoid/state/auth/providers/is_logged_in_provider.dart';
 import 'firebase_options.dart';
 
 import 'dart:developer' as devtools show log;
@@ -42,7 +43,9 @@ class App extends StatelessWidget {
       themeMode: ThemeMode.dark,
       debugShowCheckedModeBanner: false,
       home: Consumer(builder: (context, ref, child) {
-        final isLoggedIn = ref.watch(isLoggedInProvider);
+        final isLoggedIn =
+            ref.watch(authStateProvider).result == AuthResult.success;
+        isLoggedIn.log();
         if (isLoggedIn) {
           return const MainView();
         } else {
@@ -83,13 +86,13 @@ class MainView extends StatelessWidget {
 }
 
 //when you are not logged in
-class LoginView extends StatelessWidget {
+class LoginView extends ConsumerWidget {
   const LoginView({
     super.key,
   });
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Login"),
@@ -99,19 +102,11 @@ class LoginView extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           TextButton(
-            onPressed: () async {
-              final result = await const Authenticator().loginWithGoogle();
-              //print(result);
-              result.log();
-            },
+            onPressed: ref.read(authStateProvider.notifier).loginWithGoogle,
             child: const Text("Sign in with Google"),
           ),
           TextButton(
-            onPressed: () async {
-              final result = await const Authenticator().loginWithFacebook();
-              //print(result);
-              result.log();
-            },
+            onPressed: ref.read(authStateProvider.notifier).loginWithFacebook,
             child: const Text("Sign out with Facebook"),
           ),
         ],
