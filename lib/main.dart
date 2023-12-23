@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:instavoid/state/auth/backend/authenticator.dart';
+import 'package:instavoid/state/auth/providers/auth_state_provider.dart';
+import 'package:instavoid/state/auth/providers/is_logged_in_provider.dart';
 import 'firebase_options.dart';
 
 import 'dart:developer' as devtools show log;
@@ -15,7 +18,9 @@ Future<void> main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   runApp(
-    const App(),
+    const ProviderScope(
+      child: App(),
+    ),
   );
 }
 
@@ -36,26 +41,66 @@ class App extends StatelessWidget {
       ),
       themeMode: ThemeMode.dark,
       debugShowCheckedModeBanner: false,
-      home: const Home(),
+      home: Consumer(builder: (context, ref, child) {
+        final isLoggedIn = ref.watch(isLoggedInProvider);
+        if (isLoggedIn) {
+          return const MainView();
+        } else {
+          return const LoginView();
+        }
+      }),
     );
   }
 }
 
-class Home extends StatelessWidget {
-  const Home({super.key});
+class MainView extends StatelessWidget {
+  const MainView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Home'),
+        title: const Text('Main View'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text("You're alredy logged in"),
+            Consumer(builder: (context, ref, child) {
+              return TextButton(
+                onPressed: () async {
+                  await ref.read(authStateProvider.notifier).logOut();
+                },
+                child: const Text("Log out"),
+              );
+            }),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+//when you are not logged in
+class LoginView extends StatelessWidget {
+  const LoginView({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Login"),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           TextButton(
             onPressed: () async {
-              final result = await Authenticator().loginWithGoogle();
+              final result = await const Authenticator().loginWithGoogle();
               //print(result);
               result.log();
             },
@@ -63,7 +108,7 @@ class Home extends StatelessWidget {
           ),
           TextButton(
             onPressed: () async {
-              final result = await Authenticator().loginWithFacebook();
+              final result = await const Authenticator().loginWithFacebook();
               //print(result);
               result.log();
             },
