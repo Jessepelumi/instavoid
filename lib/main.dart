@@ -3,7 +3,6 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:instavoid/state/auth/models/auth_result.dart';
 import 'package:instavoid/state/auth/providers/auth_state_provider.dart';
-import 'package:instavoid/views/components/loading/loading_screen.dart';
 import 'firebase_options.dart';
 
 import 'dart:developer' as devtools show log;
@@ -69,13 +68,10 @@ class MainView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text("You're alredy logged in"),
-            Consumer(builder: (_, ref, child) {
+            Consumer(builder: (context, ref, child) {
               return TextButton(
                 onPressed: () async {
-                  LoadingScreen.instance().showLoading(
-                    context: context,
-                    text: "Hello...",
-                  );
+                  await ref.read(authStateProvider.notifier).logOut();
                 },
                 child: const Text("Log out"),
               );
