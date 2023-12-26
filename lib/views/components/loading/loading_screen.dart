@@ -39,6 +39,7 @@ class LoadingScreen {
     textController.add(text);
 
     final state = Overlay.of(context);
+    // ignore: unnecessary_null_comparison
     if (state == null) {
       return null;
     }
