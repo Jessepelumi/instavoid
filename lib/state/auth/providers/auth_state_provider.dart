@@ -4,5 +4,5 @@ import 'package:instavoid/state/auth/notifiers/auth_state_notifier.dart';
 
 //AuthStateNotifier - Notifier, AuthState - Notifier object
 final authStateProvider = StateNotifierProvider<AuthStateNotifier, AuthState>(
-  (_) => new AuthStateNotifier(),
+  (_) => AuthStateNotifier(),
 );
