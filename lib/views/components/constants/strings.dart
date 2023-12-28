@@ -13,7 +13,7 @@ class Strings {
 
   static const comment = "comment";
 
-  static const loading = "Loading...";
+  static const loading = "Loading, please wait";
 
   static const person = "person";
   static const people = "people";
