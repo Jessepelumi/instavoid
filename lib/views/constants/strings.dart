@@ -3,7 +3,7 @@ import 'package:flutter/foundation.dart' show immutable;
 @immutable
 class Strings {
   static const appName = "InstaVoid";
-  static const welcomeToAppName = "Welcome to ${Strings.appName}";
+  static const welcomeToAppName = "Welcome to ${Strings.appName}!";
   static const youHaveNoPosts =
       "You have not made a post yet. Press either the photo-upload or the video-upload at the top of the screen to get started";
   static const noPostsAvailable =

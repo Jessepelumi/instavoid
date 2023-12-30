@@ -11,7 +11,7 @@ class LoginViewSignupLink extends StatelessWidget {
   Widget build(BuildContext context) {
     return RichTextWidget(
       styleForAll:
-          Theme.of(context).textTheme.bodyMedium?.copyWith(height: 1.5),
+          Theme.of(context).textTheme.titleMedium?.copyWith(height: 1.5),
       texts: [
         BaseText.plain(
           text: Strings.dontHaveAnAccount,
@@ -20,10 +20,10 @@ class LoginViewSignupLink extends StatelessWidget {
           text: Strings.signUpOn,
         ),
         BaseText.link(
-          text: Strings.facebook,
+          text: Strings.google,
           onTapped: () {
             launchUrl(
-              Uri.parse(Strings.facebookSignupUrl),
+              Uri.parse(Strings.googleSignupUrl),
             );
           },
         ),
@@ -31,10 +31,10 @@ class LoginViewSignupLink extends StatelessWidget {
           text: Strings.orCreateAnAccountOn,
         ),
         BaseText.link(
-          text: Strings.google,
+          text: Strings.facebook,
           onTapped: () {
             launchUrl(
-              Uri.parse(Strings.googleSignupUrl),
+              Uri.parse(Strings.facebookSignupUrl),
             );
           },
         ),
