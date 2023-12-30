@@ -23,5 +23,15 @@ class Strings {
   static const postDetails = "Post Details";
   static const posts = "Posts";
 
+  static const createNewPost = "Create new post";
+  static const pleaseWriteYourMessageHere = "Please write your message here";
+  static const noCommentsYet =
+      "Nobody has commented on this post yet. You can change that though, and be the first person to comment!";
+  static const enterYourSearchTermHere = "Enter your search term here";
+
+  static const dontHaveAnAccount = "Don't have an account?\n";
+  static const signUpOn = "Sign up on ";
+  static const orCreateAnAccountOn = " or create an account on ";
+
   const Strings._();
 }

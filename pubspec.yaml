@@ -55,6 +55,8 @@ dependencies:
   lottie: ^2.7.0
   share_plus: ^7.2.1
   url_launcher: ^6.2.2
+  font_awesome_icon_class: ^0.0.6
+  font_awesome_flutter: ^10.6.0
 
 dev_dependencies:
   flutter_test:
