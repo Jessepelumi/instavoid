@@ -42,7 +42,7 @@ class LoginView extends ConsumerWidget {
                   backgroundColor: AppColors.loginButtonColor,
                   foregroundColor: AppColors.loginButtonTextColor,
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.zero),
+                    borderRadius: BorderRadius.all(Radius.circular(5)),
                   ),
                 ),
                 onPressed: ref.read(authStateProvider.notifier).loginWithGoogle,
@@ -54,7 +54,7 @@ class LoginView extends ConsumerWidget {
                   backgroundColor: AppColors.loginButtonColor,
                   foregroundColor: AppColors.loginButtonTextColor,
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.zero),
+                    borderRadius: BorderRadius.all(Radius.circular(5)),
                   ),
                 ),
                 onPressed:
