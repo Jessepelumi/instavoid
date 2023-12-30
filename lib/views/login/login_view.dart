@@ -41,7 +41,7 @@ class LoginView extends ConsumerWidget {
                 style: TextButton.styleFrom(
                   backgroundColor: AppColors.loginButtonColor,
                   foregroundColor: AppColors.loginButtonTextColor,
-                  shape: RoundedRectangleBorder(
+                  shape: const RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(5)),
                   ),
                 ),
@@ -53,7 +53,7 @@ class LoginView extends ConsumerWidget {
                 style: TextButton.styleFrom(
                   backgroundColor: AppColors.loginButtonColor,
                   foregroundColor: AppColors.loginButtonTextColor,
-                  shape: RoundedRectangleBorder(
+                  shape: const RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(5)),
                   ),
                 ),
