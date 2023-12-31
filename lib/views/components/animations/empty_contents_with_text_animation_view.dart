@@ -24,7 +24,7 @@ class EmptyContentsWithTextAnimationView extends StatelessWidget {
                   ?.copyWith(color: Colors.white54),
             ),
           ),
-          EmptyContentsAnimationView(),
+          const EmptyContentsAnimationView(),
         ],
       ),
     );

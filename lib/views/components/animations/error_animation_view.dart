@@ -2,7 +2,7 @@ import 'package:instavoid/views/components/animations/lottie_animations_views.da
 import 'package:instavoid/views/components/animations/models/lottie_animations.dart';
 
 class ErrorAnimationView extends LottieAnimationsView {
-  ErrorAnimationView({super.key})
+  const ErrorAnimationView({super.key})
       : super(
           animation: LottieAnimation.error,
         );

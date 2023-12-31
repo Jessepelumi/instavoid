@@ -2,7 +2,7 @@ import 'package:instavoid/views/components/animations/lottie_animations_views.da
 import 'package:instavoid/views/components/animations/models/lottie_animations.dart';
 
 class LoadingAnimationView extends LottieAnimationsView {
-  LoadingAnimationView({super.key})
+  const LoadingAnimationView({super.key})
       : super(
           animation: LottieAnimation.loading,
         );
