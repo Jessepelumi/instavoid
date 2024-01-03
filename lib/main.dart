@@ -6,6 +6,7 @@ import 'package:instavoid/state/auth/providers/auth_state_provider.dart';
 import 'package:instavoid/state/providers/is_loading_provider.dart';
 import 'package:instavoid/views/components/loading/loading_screen.dart';
 import 'package:instavoid/views/login/login_view.dart';
+import 'package:instavoid/views/main/main_view.dart';
 import 'firebase_options.dart';
 
 import 'dart:developer' as devtools show log;
@@ -68,31 +69,31 @@ class App extends StatelessWidget {
   }
 }
 
-class MainView extends StatelessWidget {
-  const MainView({super.key});
+// class MainView extends StatelessWidget {
+//   const MainView({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Main View'),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text("You're alredy logged in"),
-            Consumer(builder: (context, ref, child) {
-              return TextButton(
-                onPressed: () async {
-                  await ref.read(authStateProvider.notifier).logOut();
-                },
-                child: const Text("Log out"),
-              );
-            }),
-          ],
-        ),
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: const Text('Main View'),
+//       ),
+//       body: Center(
+//         child: Column(
+//           mainAxisAlignment: MainAxisAlignment.center,
+//           children: [
+//             const Text("You're alredy logged in"),
+//             Consumer(builder: (context, ref, child) {
+//               return TextButton(
+//                 onPressed: () async {
+//                   await ref.read(authStateProvider.notifier).logOut();
+//                 },
+//                 child: const Text("Log out"),
+//               );
+//             }),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }

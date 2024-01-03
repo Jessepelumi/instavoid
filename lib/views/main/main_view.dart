@@ -7,6 +7,7 @@ import 'package:instavoid/state/auth/providers/auth_state_provider.dart';
 import 'package:instavoid/views/components/dialogs/alert_dialog_model.dart';
 import 'package:instavoid/views/components/dialogs/logout_dialog.dart';
 import 'package:instavoid/views/constants/strings.dart';
+import 'package:instavoid/views/tabs/users_posts/user_posts_view.dart';
 
 class MainView extends ConsumerStatefulWidget {
   const MainView({super.key});
@@ -59,7 +60,11 @@ class _MainViewState extends ConsumerState<MainView> {
             ),
           ),
           body: TabBarView(
-            children: [],
+            children: [
+              UserPostsView(),
+              UserPostsView(),
+              UserPostsView(),
+            ],
           )),
     );
   }
