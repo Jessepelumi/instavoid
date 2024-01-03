@@ -28,7 +28,7 @@ class Post {
         thumbnailUrl = json[PostKey.thumbnailUrl],
         fileUrl = json[PostKey.fileUrl],
         fileType = FileType.values.firstWhere(
-          (FileType) => FileType.name == json[PostKey.fileType],
+          (fileType) => fileType.name == json[PostKey.fileType],
           orElse: () => FileType.image,
         ),
         fileName = json[PostKey.fileName],

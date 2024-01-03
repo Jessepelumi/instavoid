@@ -68,32 +68,3 @@ class App extends StatelessWidget {
     );
   }
 }
-
-// class MainView extends StatelessWidget {
-//   const MainView({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: const Text('Main View'),
-//       ),
-//       body: Center(
-//         child: Column(
-//           mainAxisAlignment: MainAxisAlignment.center,
-//           children: [
-//             const Text("You're alredy logged in"),
-//             Consumer(builder: (context, ref, child) {
-//               return TextButton(
-//                 onPressed: () async {
-//                   await ref.read(authStateProvider.notifier).logOut();
-//                 },
-//                 child: const Text("Log out"),
-//               );
-//             }),
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }

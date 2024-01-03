@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:instavoid/state/posts/providers/user_posts_provider.dart';
+//import 'package:instavoid/views/components/animations/data_not_found_animation_view.dart';
 import 'package:instavoid/views/components/animations/empty_contents_with_text_animation_view.dart';
 import 'package:instavoid/views/components/animations/error_animation_view.dart';
 import 'package:instavoid/views/components/animations/loading_animation_view.dart';
@@ -25,6 +26,7 @@ class UserPostsView extends ConsumerWidget {
             return const EmptyContentsWithTextAnimationView(
               text: Strings.youHaveNoPosts,
             );
+            //return const DataNotFoundAnimationView();
           } else {
             return PostGridView(
               posts: posts,
