@@ -3,6 +3,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:instavoid/state/auth/providers/auth_state_provider.dart';
+import 'package:instavoid/views/components/dialogs/alert_dialog_model.dart';
+import 'package:instavoid/views/components/dialogs/logout_dialog.dart';
 import 'package:instavoid/views/constants/strings.dart';
 
 class MainView extends ConsumerStatefulWidget {
@@ -18,24 +21,46 @@ class _MainViewState extends ConsumerState<MainView> {
     return DefaultTabController(
       length: 3,
       child: Scaffold(
-        appBar: AppBar(
-          title: const Text(Strings.appName),
-          actions: [
-            IconButton(
-              icon: const FaIcon(FontAwesomeIcons.film),
-              onPressed: () async {},
+          appBar: AppBar(
+            title: const Text(Strings.appName),
+            actions: [
+              IconButton(
+                icon: const FaIcon(FontAwesomeIcons.film),
+                onPressed: () async {},
+              ),
+              IconButton(
+                icon: const Icon(Icons.add_photo_alternate_outlined),
+                onPressed: () async {},
+              ),
+              IconButton(
+                icon: const Icon(Icons.logout),
+                onPressed: () async {
+                  final shouldLogout = await const LogoutDialog()
+                      .present(context)
+                      .then((value) => value ?? false);
+                  if (shouldLogout) {
+                    await ref.read(authStateProvider.notifier).logOut();
+                  }
+                },
+              ),
+            ],
+            bottom: const TabBar(
+              tabs: [
+                Tab(
+                  icon: Icon(Icons.home),
+                ),
+                Tab(
+                  icon: Icon(Icons.search),
+                ),
+                Tab(
+                  icon: Icon(Icons.person),
+                ),
+              ],
             ),
-            IconButton(
-              icon: const Icon(Icons.add_photo_alternate_outlined),
-              onPressed: () async {},
-            ),
-            IconButton(
-              icon: const Icon(Icons.logout),
-              onPressed: () async {},
-            ),
-          ],
-        ),
-      ),
+          ),
+          body: TabBarView(
+            children: [],
+          )),
     );
   }
 }
