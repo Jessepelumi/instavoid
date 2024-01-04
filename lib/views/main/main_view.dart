@@ -48,7 +48,7 @@ class _MainViewState extends ConsumerState<MainView> {
           bottom: const TabBar(
             tabs: [
               Tab(
-                icon: Icon(Icons.home),
+                icon: Icon(Icons.dashboard),
               ),
               Tab(
                 icon: Icon(Icons.search),
