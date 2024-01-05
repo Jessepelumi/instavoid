@@ -20,10 +20,10 @@ class FileThumbnailView extends ConsumerWidget {
     );
 
     return thumbnail.when(
-      data: (ImageWithAspectRatio) {
+      data: (imageWithAspectRatio) {
         return AspectRatio(
-          aspectRatio: ImageWithAspectRatio.aspectRatio,
-          child: ImageWithAspectRatio.image,
+          aspectRatio: imageWithAspectRatio.aspectRatio,
+          child: imageWithAspectRatio.image,
         );
       },
       error: (error, stackTrace) {
