@@ -20,7 +20,7 @@ import 'package:video_thumbnail/video_thumbnail.dart';
 class ImageUploadNotifier extends StateNotifier<IsLoading> {
   ImageUploadNotifier() : super(false); //false means it is not loading
 
-  set IsLoading(bool value) => state = value;
+  set isLoading(bool value) => state = value;
 
   Future<bool> upload({
     required File file,
@@ -29,7 +29,7 @@ class ImageUploadNotifier extends StateNotifier<IsLoading> {
     required Map<PostSetting, bool> postSettings,
     required UserId userId,
   }) async {
-    IsLoading = true;
+    isLoading = true;
 
     late Uint8List thumbnailUint8List;
 
@@ -37,7 +37,7 @@ class ImageUploadNotifier extends StateNotifier<IsLoading> {
       case FileType.image:
         final fileAsImage = img.decodeImage(file.readAsBytesSync());
         if (fileAsImage == null) {
-          IsLoading = false;
+          isLoading = false;
           throw const CouldNotBuildThumbnailException();
         }
         final thumbnail = img.copyResize(
@@ -55,7 +55,7 @@ class ImageUploadNotifier extends StateNotifier<IsLoading> {
           quality: Constants.videoThumbnailQuality,
         );
         if (thumb == null) {
-          IsLoading = false;
+          isLoading = false;
           throw const CouldNotBuildThumbnailException();
         } else {
           thumbnailUint8List = thumb;
@@ -112,7 +112,7 @@ class ImageUploadNotifier extends StateNotifier<IsLoading> {
     } catch (_) {
       return false;
     } finally {
-      IsLoading = false;
+      isLoading = false;
     }
   }
 }

@@ -49,7 +49,7 @@ class _CreateNewPostViewState extends ConsumerState<CreateNewPostView> {
     }, [postController]);
     return Scaffold(
       appBar: AppBar(
-        title: Text(Strings.createNewPost),
+        title: const Text(Strings.createNewPost),
         actions: [
           IconButton(
             onPressed: isPostButtonEnabled.value
@@ -85,7 +85,7 @@ class _CreateNewPostViewState extends ConsumerState<CreateNewPostView> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: TextField(
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     labelText: Strings.pleaseWriteYourMessageHere),
                 autofocus: true,
                 maxLines: null,
