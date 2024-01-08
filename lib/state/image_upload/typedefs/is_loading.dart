@@ -1,1 +1,1 @@
-typedef isLoading = bool;
+typedef IsLoading = bool;
