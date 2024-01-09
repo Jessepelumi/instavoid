@@ -29,4 +29,21 @@ class UserInfoModel extends MapView<String, String?> {
           displayName: json[FirebaseFieldName.displayName] ?? "",
           email: json[FirebaseFieldName.email],
         );
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is UserInfoModel &&
+          runtimeType == other.runtimeType &&
+          userId == other.userId &&
+          displayName == other.displayName &&
+          email == other.email;
+
+  @override
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        userId,
+        displayName,
+        email,
+      ]);
 }
