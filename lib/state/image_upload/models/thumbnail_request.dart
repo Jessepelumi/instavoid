@@ -23,7 +23,7 @@ class ThumbnailRequest {
 
   @override
   int get hashCode => Object.hashAll([
-        runtimeType,
+        //runtimeType,
         file,
         fileType,
       ]);

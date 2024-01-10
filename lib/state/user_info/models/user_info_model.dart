@@ -41,7 +41,7 @@ class UserInfoModel extends MapView<String, String?> {
 
   @override
   int get hashCode => Object.hashAll([
-        runtimeType,
+        //runtimeType,
         userId,
         displayName,
         email,
