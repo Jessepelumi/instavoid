@@ -50,16 +50,6 @@ class PostCommentsView extends HookConsumerWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(Strings.comments),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.send),
-            onPressed: hasText.value
-                ? () {
-                    _submitCommentWithController(commentController, ref);
-                  }
-                : null,
-          )
-        ],
       ),
       body: SafeArea(
         child: Flex(
@@ -110,20 +100,35 @@ class PostCommentsView extends HookConsumerWidget {
                 alignment: Alignment.bottomCenter,
                 child: Padding(
                   padding: const EdgeInsets.all(16.0),
-                  child: TextField(
-                    textInputAction: TextInputAction.send,
-                    controller: commentController,
-                    onSubmitted: (comment) {
-                      if (comment.isNotEmpty) {
-                        _submitCommentWithController(
-                          commentController,
-                          ref,
-                        );
-                      }
-                    },
-                    decoration: const InputDecoration(
-                        hintText: Strings.writeYourCommentHere),
-                  ),
+                  //for hasText to work, a BuildContext is needed
+                  child: Builder(builder: (BuildContext context) {
+                    return TextField(
+                      textInputAction: TextInputAction.send,
+                      controller: commentController,
+                      onSubmitted: (comment) {
+                        if (comment.isNotEmpty) {
+                          _submitCommentWithController(
+                            commentController,
+                            ref,
+                          );
+                        }
+                      },
+                      decoration: InputDecoration(
+                        hintText: Strings.writeYourCommentHere,
+                        suffix: IconButton(
+                          icon: const Icon(Icons.send),
+                          onPressed: hasText.value
+                              ? () {
+                                  _submitCommentWithController(
+                                    commentController,
+                                    ref,
+                                  );
+                                }
+                              : null,
+                        ),
+                      ),
+                    );
+                  }),
                 ),
               ),
             )
