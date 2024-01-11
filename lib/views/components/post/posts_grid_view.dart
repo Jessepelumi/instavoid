@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:instavoid/state/posts/models/post.dart';
 import 'package:instavoid/views/components/post/post_thumbnail_view.dart';
+import 'package:instavoid/views/post_comments/post_comments_view.dart';
 
 class PostGridView extends StatelessWidget {
   final Iterable<Post> posts;
@@ -23,6 +24,15 @@ class PostGridView extends StatelessWidget {
           post: post,
           onTapped: () {
             // TODO: navigate to the post detail view
+
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => PostCommentsView(
+                  postId: post.postId,
+                ),
+              ),
+            );
           },
         );
       },

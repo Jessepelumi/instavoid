@@ -10,7 +10,7 @@ class Strings {
   static const people = "people";
   static const likedThis = "liked this";
 
-  static const delete = "delete";
+  static const delete = "Delete";
   static const areYouSureYouWantToDeleteThis = "Are you sure you delete this?";
 
   static const logOut = "Log out";

@@ -52,7 +52,7 @@ class PostCommentsView extends HookConsumerWidget {
         title: const Text(Strings.comments),
         actions: [
           IconButton(
-            icon: Icon(Icons.send),
+            icon: const Icon(Icons.send),
             onPressed: hasText.value
                 ? () {
                     _submitCommentWithController(commentController, ref);
@@ -91,7 +91,7 @@ class PostCommentsView extends HookConsumerWidget {
                         postCommentProvider(request.value),
                       );
                       return Future.delayed(
-                        Duration(seconds: 1),
+                        const Duration(seconds: 1),
                       );
                     },
                   );
@@ -109,10 +109,7 @@ class PostCommentsView extends HookConsumerWidget {
               child: Align(
                 alignment: Alignment.bottomCenter,
                 child: Padding(
-                  padding: const EdgeInsets.only(
-                    left: 8.0,
-                    right: 8.0,
-                  ),
+                  padding: const EdgeInsets.all(16.0),
                   child: TextField(
                     textInputAction: TextInputAction.send,
                     controller: commentController,
@@ -125,9 +122,7 @@ class PostCommentsView extends HookConsumerWidget {
                       }
                     },
                     decoration: const InputDecoration(
-                      border: OutlineInputBorder(),
-                      labelText: Strings.writeYourCommentHere,
-                    ),
+                        hintText: Strings.writeYourCommentHere),
                   ),
                 ),
               ),
