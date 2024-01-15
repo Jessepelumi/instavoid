@@ -18,7 +18,6 @@ import 'package:instavoid/views/components/post/post_date_view.dart';
 import 'package:instavoid/views/components/post/post_display_name_and_message_view.dart';
 import 'package:instavoid/views/components/post/post_image_or_video_view.dart';
 import 'package:instavoid/views/constants/strings.dart';
-import 'package:instavoid/views/login/divider_with_margins.dart';
 import 'package:instavoid/views/post_comments/post_comments_view.dart';
 import 'package:share_plus/share_plus.dart';
 
