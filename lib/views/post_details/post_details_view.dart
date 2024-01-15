@@ -142,8 +142,8 @@ class _PostDetailsViewState extends ConsumerState<PostDetailsView> {
                   dateTime: postWithComments.post.createdAt,
                 ),
                 //horizontal divider
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
                   child: Divider(
                     color: Colors.white70,
                   ),
