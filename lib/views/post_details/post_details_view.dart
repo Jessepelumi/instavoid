@@ -143,7 +143,12 @@ class _PostDetailsViewState extends ConsumerState<PostDetailsView> {
                   dateTime: postWithComments.post.createdAt,
                 ),
                 //horizontal divider
-                const DividerWithMargins(),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Divider(
+                    color: Colors.white70,
+                  ),
+                ),
                 //show 3 most recent comments
                 CompactCommentColumn(
                   comments: postWithComments.comments,
