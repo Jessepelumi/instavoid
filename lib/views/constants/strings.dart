@@ -9,7 +9,7 @@ class Strings {
   static const noPostsAvailable =
       "Nobody seems to have made any posts yet. Why don't you make your first post";
   static const enterYourSearchTerm =
-      "Enter your search term in order to get started. You can search in the description of all posts available in the system";
+      "Enter your search term. You can search using the description of all posts available in the system";
 
   static const facebook = "Facebook";
   static const facebookSignupUrl = "https://www.facebook.com/signup";
