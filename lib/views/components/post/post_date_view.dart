@@ -11,7 +11,7 @@ class PostDateView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final formatter = DateFormat("D MMMM, YYYY, HH:MM A");
+    final formatter = DateFormat("d MMMM, yyyy, hh:mm a");
 
     return Padding(
       padding: const EdgeInsets.only(left: 8.0),
