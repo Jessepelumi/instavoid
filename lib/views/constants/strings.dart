@@ -21,7 +21,7 @@ class Strings {
   static const writeYourCommentHere = "Write your comment here";
   static const checkOutThisPost = "Check out this post";
   static const postDetails = "Post Details";
-  static const posts = "Posts";
+  static const posts = "Post";
 
   static const createNewPost = "Create new post";
   static const pleaseWriteYourMessageHere = "Please write your message here";
