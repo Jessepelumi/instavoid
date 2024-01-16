@@ -16,7 +16,7 @@ class PostVideoView extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final controller = VideoPlayerController.networkUrl(
-      post.fileUrl as Uri,
+      Uri.parse(post.fileUrl),
     );
 
     final isVideoPlayerReady = useState(false);
