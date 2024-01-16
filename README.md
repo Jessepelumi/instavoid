@@ -1,16 +1,17 @@
 # instavoid
 
-A new Flutter project.
+A picture-sharing cross-platform application.
 
-## Getting Started
+This application was built with Dart and Flutter. 
+It extensively uses Riverpod for its state management, and FireBase for its data management and storage.
+The application uses Google and Facebook authentication for user login.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+The application consists of 8 views:
+- Login view
+- Home view/tab
+- Search tab
+- User posts view
+- Image upload view
+- Video upload view
+- Post details view
+- Comments view
