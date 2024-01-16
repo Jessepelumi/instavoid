@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:instavoid/state/posts/models/post.dart';
+import 'package:instavoid/views/components/animations/loading_animation_view.dart';
 
 class PostImageView extends StatelessWidget {
   final Post post;
@@ -17,9 +18,7 @@ class PostImageView extends StatelessWidget {
         post.fileUrl,
         loadingBuilder: (context, child, loadingProgress) {
           if (loadingProgress == null) return child;
-          return const Center(
-            child: CircularProgressIndicator(),
-          );
+          return const LoadingAnimationView();
         },
       ),
     );
